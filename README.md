@@ -1,2 +1,2 @@
 # baykinsportal
-Baykin Pharmacy Staff Intranet
+Baykins Pharmacy Staff Intranet
