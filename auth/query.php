@@ -52,7 +52,7 @@ include "./config/db.php";
         }
         else
         {
-            $_SESSION['error_message'] = "Error updating updating profile.";
+            $_SESSION['error_message'] = "Error updating profile.";
             echo "<meta http-equiv='refresh' content='2; URL=profile'>";
         }
     }
@@ -151,3 +151,52 @@ include "./config/db.php";
 
 }
 
+//Staff Query Response
+if(isset($_POST['query_response_btn'])) {
+
+    $response = $conn->real_escape_string($_POST['response']);
+
+    $id = $_SESSION['id'];
+    $sql=mysqli_query($conn,"SELECT * FROM queries where staffID='".$_SESSION['id']."'");
+    $result=mysqli_fetch_array($sql);
+    if($result>0)
+    {
+        $conn=mysqli_query($conn,"UPDATE queries SET response='$response' where staffID='".$_SESSION['id']."'");
+        $_SESSION['success_message'] = "Response Sent! 👍";
+        header('location: queries');
+    }
+    else
+    {
+        $_SESSION['error_message'] = "Error updating response.";
+        header('location: queries');
+    }
+}
+
+
+//Send Support Request
+if (isset($_POST['support_request_btn'])) {
+
+    $id = $conn->real_escape_string($_POST['id']);
+    $staffID = $conn->real_escape_string($_POST['staffID']);
+    $firstName = $conn->real_escape_string($_POST['firstName']);
+    $lastName = $conn->real_escape_string($_POST['lastName']);
+    $purpose = $conn->real_escape_string($_POST['purpose']);
+    $comment = $conn->real_escape_string($_POST['comment']);
+
+
+
+    $query = "INSERT INTO support (staffID, firstName, lastName, purpose, comment)"
+        . "VALUES ('$staffID', '$firstName', '$lastName', '$purpose', '$comment')";
+
+    mysqli_query($conn, $query);
+    if (mysqli_affected_rows($conn) > 0) {
+
+        $_SESSION['success_message'] = "Nice one champ👍  <strong>Support Request Sent!</strong>";
+        echo "<meta http-equiv='refresh' content='3; URL=support'>";
+    }
+    else {
+        $_SESSION['error_message'] = "Error sending report.";
+        echo "<meta http-equiv='refresh' content='3; URL=request-support'>";
+    }
+
+}

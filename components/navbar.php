@@ -16,26 +16,27 @@
                 <ul class="list-unstyled ms-n2 mb-4">
                     <!-- Nav item -->
                     <li class="nav-item <?php if($page=='Dashboard'){echo 'active';}?>">
-                        <a class="nav-link" href="dashboard"><i class="fe fe-home nav-icon"></i>My
-                            Dashboard</a>
+                        <a class="nav-link" href="dashboard"><i class="fe fe-home nav-icon"></i>My Dashboard</a>
                     </li>
                     <!-- Nav item -->
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" href="test"><i class="fe fe-book nav-icon"></i>Assessments</a>
+                    </li>-->
+                    <!-- Nav item -->
+                    <li class="nav-item <?php if($page=='Reports'){echo 'active';}?>">
+                        <a class="nav-link" href="reports"><i class="fe fe-folder nav-icon"></i>Reports</a>
                     </li>
                     <!-- Nav item -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="reports"><i class="fe fe-star nav-icon"></i>Reports</a>
+                    <li class="nav-item <?php if($page=='Queries'){echo 'active';}?>">
+                        <a class="nav-link" href="queries"><i class="fe fe-mic nav-icon"></i>Queries</a>
                     </li>
                     <!-- Nav item -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="queries"><i
-                                class="fe fe-pie-chart nav-icon"></i>Queries</a>
+                    <li class="nav-item <?php if($page=='News'){echo 'active';}?>">
+                        <a class="nav-link" href="news"><i class="fe fe-bell nav-icon"></i>News</a>
                     </li>
                     <!-- Nav item -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="news"><i
-                                class="fe fe-shopping-bag nav-icon"></i>News</a>
+                    <li class="nav-item <?php if($page=='Support'){echo 'active';}?>">
+                        <a class="nav-link" href="support"><i class="fe fe-message-square nav-icon"></i>Support</a>
                     </li>
                 </ul>
                 <!-- Navbar header -->

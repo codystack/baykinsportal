@@ -12,9 +12,9 @@ if ($WEBSITE_ENVIRONMENT == "Development") {
     error_reporting(E_ALL ^ E_NOTICE); // turn ON showing errors
 } else {
     $host = "localhost";
-    $user = "baykinsc_baykins";
+    $user = "webiirem_Baykins";
     $password = "Webify2020!!";
-    $database = "baykinsc_baykins";
+    $database = "webiirem_Baykins";
     define("APP_ENVIRONMENT", "Production");
     define("APP_BASE_URL", "https://www.iverify.ng");
     #error_reporting(0); // turn OFF showing errors

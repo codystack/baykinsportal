@@ -84,6 +84,18 @@
         window.history.back()
     }
 </script>
+<script>
+    $(document).ready( function () {
+        $('#allReports').DataTable();
+    } );
+</script>
+<script>
+    function close_window() {
+        if (confirm("Close Window?")) {
+            close();
+        }
+    }
+</script>
 
 </body>
 

@@ -11,7 +11,7 @@ if (mysqli_num_rows($result) > 0) {
         $badge = $row['badge'];
         $email = $row['email'];
 ?>
-<!-- User info -->
+
 <div class="row align-items-center">
     <div class="col-xl-12 col-lg-12 col-md-12 col-12">
         <!-- Bg -->
